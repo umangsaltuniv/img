@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+		
+		
+		// Run Application for main image
+		stage('main_image') {
+			steps {
+				sh 'python3 test_script_v1.6.py images/'
+			}
+		}
+
+		
+		/*	
+        stage('Clean') {
+            steps {
+                sh 'mvn clean'
+            }
+        }
+		*/
+		
+	
+		
+    }
+}
