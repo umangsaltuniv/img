@@ -6,7 +6,7 @@ pipeline {
 		// Run Application for main image
 		stage('main_image') {
 			steps {
-				sh 'python3 test_script_v1.6.py images/'
+				sh 'python3 test_script_v1.6.py images'
 			}
 		}
 
