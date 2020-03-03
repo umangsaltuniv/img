@@ -3,21 +3,24 @@ pipeline {
     stages {
 		
 		
-		// Run Application for main image
-		stage('main_image') {
+		stage('imageset1') {
 			steps {
+
+				catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
+			{
 				bat 'python test_script_v1.6.py images'
+			}
 			}
 		}
 
 		
-		/*	
-        stage('Clean') {
-            steps {
-                sh 'mvn clean'
-            }
-        }
-		*/
+		stage('imageset2') {
+			steps {
+
+				bat 'python test_script_v1.6.py images1'
+			
+			}
+		}
 		
 	
 		
